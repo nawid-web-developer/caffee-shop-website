@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 38 40% 97%;
+    --foreground: 25 45% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 25 45% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 45% 10%;
+    --primary: 25 50% 16%;
+    --primary-foreground: 40 35% 96%;
+    --secondary: 36 28% 90%;
+    --secondary-foreground: 25 45% 12%;
+    --muted: 36 24% 92%;
+    --muted-foreground: 26 20% 35%;
+    --accent: 22 70% 42%;
+    --accent-foreground: 40 40% 98%;
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 34 24% 82%;
+    --input: 34 24% 82%;
+    --ring: 22 70% 42%;
+
+    --espresso: 25 50% 10%;
+    --espresso-foreground: 40 35% 95%;
+    --cream: 40 35% 93%;
+    --cream-foreground: 25 45% 12%;
+    --latte: 33 30% 80%;
+    --latte-foreground: 25 50% 16%;
+    --mocha: 25 35% 32%;
+    --mocha-foreground: 40 35% 96%;
+    --clay: 20 35% 46%;
+    --clay-foreground: 40 40% 97%;
+
+    --chart-1: 22 70% 48%;
+    --chart-2: 33 40% 70%;
+    --chart-3: 25 50% 26%;
+    --chart-4: 43 60% 68%;
+    --chart-5: 18 45% 42%;
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv01";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif), Georgia, serif;
+  }
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply mx-auto w-full max-w-[1400px] px-4 sm:px-6 lg:px-10;
+  }
+  .container-narrow {
+    @apply mx-auto w-full max-w-[860px] px-4 sm:px-6;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: hsl(var(--primary)) !important;
+  }
+  .swiper-pagination-bullet {
+    background: hsl(var(--primary)) !important;
+  }
+}
